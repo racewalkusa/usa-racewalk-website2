@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>USATF Marathon Racewalk Favorites — Entrants, Clubs, and Storylines</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:wght@200;700&display=swap" rel="stylesheet">
+  <link rel="canonical" href="https://usaracewalk.com/marathonfaves.html">
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="USATF Marathon Racewalk Favorites — Entrants, Clubs, and Storylines">
+  <meta property="og:description" content="Deep dive on contenders, full entrants list, and storylines for the USATF Marathon Race Walk and Masters Half Marathon Championships.">
+  <meta property="og:image" content="https://usaracewalk.com/images/feature-marathon-favorites.jpg">
+  <meta property="og:url" content="https://usaracewalk.com/marathonfaves.html">
+  <meta property="og:type" content="article">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USATF Marathon Racewalk Favorites — Entrants, Clubs, and Storylines">
+  <meta name="twitter:description" content="Contenders, full entrants, and club breakdown ahead of the USATF Marathon Race Walk.">
+  <meta name="twitter:image" content="https://usaracewalk.com/images/feature-marathon-favorites.jpg">
+
+  <!-- JSON-LD Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "NewsArticle",
+    "headline": "USATF Marathon Racewalk Favorites — Entrants, Debut Marathon, and Storylines",
+    "description": "Deep dive on contenders, full entrants list, and storylines to follow for the USATF Marathon Race Walk and Masters Half Marathon Championships.",
+    "image": [
+      "https://usaracewalk.com/images/feature-marathon-favorites.jpg"
+    ],
+    "datePublished": "2026-01-02",
+    "dateModified": "2026-01-02",
+    "author": {
+      "@type": "Person",
+      "name": "USA RACEWALK Editorial"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "USA RACEWALK",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://usaracewalk.com/images/logo.png"
+      }
+    },
+    "mainEntityOfPage": "https://usaracewalk.com/marathonfaves.html"
+  }
+  </script>
+
+  <style>
+    :root { --nav:#003366; --accent:#ff0000; --bg:#e6f0ff; --text:#0b1320; --card:#fff; --muted:#5b6780; }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 200;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* Top bar */
+    .topbar {
+      position: sticky; top: 0; z-index: 1000;
+      background: var(--nav);
+      color: #fff;
+      display: flex; align-items: center; gap: 16px; padding: 12px 16px;
+      flex-wrap: wrap;
+    }
+    .topbar a.brand {
+      font-family: 'Fjalla One', sans-serif;
+      color: #fff; text-decoration: none; font-size: 1.4rem; letter-spacing: 0.5px;
+    }
+    .topbar .spacer { flex: 1; }
+    .topbar a.navlink { color: #fff; text-decoration: none; font-weight: 700; }
+    .topbar a.navlink:hover { color: var(--accent); }
+    .topbar input[type="search"] {
+      padding: 8px 10px; border-radius: 8px; border: 1px solid rgba(255,255,255,0.6);
+      min-width: 220px;
+    }
+
+    /* Header hero */
+    header.hero {
+      max-width: 1100px; margin: 18px auto; padding: 0 16px;
+    }
+    .hero-card {
+      background: var(--card); border-radius: 14px; overflow: hidden;
+      box-shadow: 0 10px 28px rgba(0,0,0,0.12);
+    }
+    .hero-media { width: 100%; height: 360px; object-fit: cover; display: block; }
+    .hero-body { padding: 20px 22px; }
+    .hero-title {
+      font-family: 'Fjalla One', sans-serif; font-size: 2.4rem; margin: 0 0 6px; color: var(--nav);
+    }
+    .hero-sub { color: var(--muted); margin: 0 0 12px; }
+    .share { margin-top: 8px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .share a { color: var(--nav); font-weight: 700; text-decoration: none; }
+    .share a:hover { color: var(--accent); }
+
+    /* Layout */
+    main {
+      max-width: 1100px; margin: 0 auto; padding: 0 16px 40px;
+      display: grid; grid-template-columns: 1fr; gap: 16px;
+    }
+    @media (min-width: 980px) {
+      main { grid-template-columns: 3fr 1.2fr; }
+    }
+
+    /* Article */
+    article {
+      background: var(--card); border-radius: 12px; padding: 20px 22px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+    article h2 { color: var(--nav); margin: 16px 0 8px; font-weight: 700; }
+    article p { margin: 8px 0 12px; }
+    .pull {
+      border-left: 4px solid var(--accent); padding-left: 12px;
+      color: var(--nav); font-weight: 700; margin: 14px 0;
+    }
+
+    /* Stats cards */
+    .stats {
+      display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 12px; margin: 10px 0 18px;
+    }
+    .stat {
+      background: #f4f7ff; border-radius: 10px; padding: 14px; text-align: center;
+      border: 1px solid #e2e9ff;
+    }
+    .stat .num { font-family: 'Fjalla One', sans-serif; font-size: 1.8rem; color: var(--nav); }
+    .stat .label { color: var(--muted); font-weight: 700; }
+
+    /* Entrants table + controls */
+    .controls {
+      display: flex; flex-wrap: wrap; gap: 8px; margin: 12px 0 8px;
+    }
+    .controls input, .controls select, .controls button {
+      padding: 8px 10px; border: 1px solid #d9e1f2; border-radius: 8px; background: #fff;
+      font-family: inherit;
+    }
+    .controls button {
+      background: var(--nav); color: #fff; border: none; font-weight: 700; cursor: pointer;
+    }
+    .controls button.secondary { background: #eef3ff; color: var(--nav); border: 1px solid #d9e1f2; }
+    .controls button:hover { filter: brightness(0.96); }
+
+    table {
+      width: 100%; border-collapse: collapse; margin-top: 10px; font-size: 0.98rem;
+    }
+    thead th {
+      background: var(--nav); color: #fff; text-align: left; padding: 10px;
+      position: sticky; top: 0; z-index: 1;
+    }
+    tbody td {
+      padding: 10px; border-bottom: 1px solid #eef2fa;
+    }
+    tbody tr:hover { background: #f7faff; }
+
+    /* Sidebar */
+    aside {
+      position: sticky; top: 72px; align-self: start;
+      background: var(--card); border-radius: 12px; padding: 16px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+      height: fit-content;
+    }
+    .aside-title { margin: 0 0 10px; color: var(--nav); font-weight: 700; }
+    .club-list { list-style: none; margin: 0; padding: 0; }
+    .club-list li { padding: 8px 0; border-bottom: 1px solid #f0f3f8; display:flex; justify-content:space-between; gap:8px; }
+    .club-list li:last-child { border-bottom: none; }
+
+    /* Footer */
+    footer { text-align: center; padding: 28px 16px; color: #556072; }
+
+    /* Accessibility */
+    a:focus, button:focus, input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: 2px; }
+  </style>
+</head>
+<body>
+
+  <div class="topbar" role="navigation" aria-label="Top navigation">
+    <a class="brand" href="index.html">USA RACEWALK</a>
+    <a class="navlink" href="index.html" aria-label="Back to Home">Home</a>
+    <a class="navlink" href="index.html#upcoming" aria-label="Upcoming Races">Upcoming</a>
+    <a class="navlink" href="index.html#results" aria-label="Results">Results</a>
+    <a class="navlink" href="index.html#athletes" aria-label="Athletes">Athletes</a>
+    <div class="spacer"></div>
+    <input id="globalSearch" type="search" placeholder="Search entrants…" aria-label="Search entrants" />
+  </div>
+
+  <header class="hero">
+    <div class="hero-card">
+      <img class="hero-media" src="images/feature-marathon-favorites.jpg" alt="Lead pack racing at the USATF Marathon Race Walk" />
+      <div class="hero-body">
+        <h1 class="hero-title">USATF Marathon Racewalk Favorites — Entrants, Clubs, and Storylines</h1>
+        <p class="hero-sub">USATF Marathon Race Walk and Masters Half Marathon Championships — contenders to watch, who’s entered, and which clubs bring depth.</p>
+        <div class="share" data-share-url="https://usaracewalk.com/marathonfaves.html" data-share-text="USATF Marathon Racewalk Favorites — Entrants, Clubs, and Storylines">
+          <a href="#" class="share-x">Share on X</a>
+          <a href="#" class="share-fb">Share on Facebook</a>
+          <a href="#" class="share-copy">Copy link</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <article>
+      <section>
+        <div class="stats" id="stats">
+          <div class="stat"><div class="num" id="statTotal">–</div><div class="label">Total Entrants</div></div>
+          <div class="stat"><div class="num" id="statClubs">–</div><div class="label">Clubs Represented</div></div>
+          <div class="stat"><div class="num" id="statUnaffiliated">–</div><div class="label">Unaffiliated</div></div>
+        </div>
+        <p class="pull">The first race walk marathon on US soil will be determined by experience and strength. Expect early moves but there's a pattern of walkers moving steadily to the front of these races.</p>
+        <p>Based on current entries, the field consists of mainly veteran walkers headlining the field. Below you’ll find the full entry list, club representation, and tools to filter and search. Use the controls to spotlight your team or quickly find an athlete.</p>
+      </section>
+
+      <section>
+        <h2>Favorites and Storylines</h2>
+        <p><strong>Proven championship experience:</strong> Names like Katie Burnett, Nick Christie, and Maria Michta-Coffey bring elite pedigree and race‑day intelligence. As reigning champions, Katie and Nick should be ones to watch but it seems like the women's field has a few contenders for the top podium spot.</p>
+        <p><strong>Underdogs to watch</strong> Michael Mannozzi is one underdog to keep an eye on as he's been consistently checking off 100km weeks in training. Katie Miale, with experience in running marathons, should put forth a strong performance.</p>
+      </section>
+
+      <section>
+        <h2>Entrants</h2>
+        <div class="controls" role="group" aria-label="Entrants controls">
+          <input id="searchInput" type="search" placeholder="Search by name or club…" aria-label="Search entrants by name or club">
+          <select id="clubFilter" aria-label="Filter by club">
+            <option value="all">All Clubs</option>
+          </select>
+          <button id="clearFilters">Clear</button>
+          <button id="printList" class="secondary" title="Print or save as PDF">Print</button>
+          <button id="exportCSV" class="secondary" title="Export entrants as CSV">Export CSV</button>
+        </div>
+
+        <table aria-describedby="tableDesc">
+          <caption id="tableDesc" style="text-align:left; padding:6px 0; color:#5b6780;">Full list of athletes entered in the USATF Marathon Race Walk and Masters Half Marathon Championships.</caption>
+          <thead>
+            <tr>
+              <th scope="col">Name</th>
+              <th scope="col">Club</th>
+            </tr>
+          </thead>
+          <tbody id="entrantsTbody">
+            <!-- Rendered by JS -->
+          </tbody>
+        </table>
+      </section>
+
+      <section>
+        <h2>How the Race Might Unfold</h2>
+        <p>Expect a conservative open through 30 km for the women, while Nick should have an early lead. Jordan Crawford is also a key contender, remember he was close behind Nick at the 35km Championships last time we were in Santee. This will be a good race to watch, especially at the end during the additional 7 kilometers.</p>
+        <p>Weather conditions could also play a role in how the race starts. You never know if it'll be raining or sunny outside.</p>
+      </section>
+    </article>
+
+    <aside>
+      <h3 class="aside-title">Clubs by Entrants</h3>
+      <ul class="club-list" id="clubList">
+        <!-- Rendered by JS -->
+      </ul>
+      <div class="aside-title" style="margin-top:16px;">Quick Links</div>
+      <ul class="club-list">
+        <li><a href="index.html#upcoming">Upcoming Races</a><span></span></li>
+        <li><a href="index.html#results">Results</a><span></span></li>
+        <li><a href="index.html#athletes">Athletes</a><span></span></li>
+      </ul>
+    </aside>
+  </main>
+
+  <footer>© 2026 USA RACEWALK — All rights reserved.</footer>
+
+  <script>
+    // Data: Entrants and Clubs (from user list)
+    const entrants = [
+      { name: "Dorit Attias", club: "Walk USA" },
+      { name: "Michael Bartholomew", club: "Raleigh Walkers" },
+      { name: "Katie Burnett", club: "Harrier Track Club" },
+      { name: "Jason Cherng", club: "New England Walkers" },
+      { name: "Nick Christie", club: "New York Athletic Club (NYAC)" },
+      { name: "Jordan Crawford", club: "Raleigh Walkers" },
+      { name: "Anna Currey", club: "Unaffiliated" },
+      { name: "Anthony Joseph Gruttadauro", club: "Shore Athletic Club" },
+      { name: "Bruce Logan", club: "Unaffiliated" },
+      { name: "Lydia McGranahan", club: "High Altitude Racewalk Team (HART)" },
+      { name: "Katherine Miale", club: "New England Walkers" },
+      { name: "Maria Michta-Coffey", club: "Walk USA" },
+      { name: "Erin Taylor Talcott", club: "Shore Athletic Club" }
+    ];
+
+    // Elements
+    const tbody = document.getElementById('entrantsTbody');
+    const clubFilter = document.getElementById('clubFilter');
+    const searchInput = document.getElementById('searchInput');
+    const globalSearch = document.getElementById('globalSearch');
+    const statTotal = document.getElementById('statTotal');
+    const statClubs = document.getElementById('statClubs');
+    const statUnaffiliated = document.getElementById('statUnaffiliated');
+    const clubListEl = document.getElementById('clubList');
+    const exportCSVBtn = document.getElementById('exportCSV');
+    const printBtn = document.getElementById('printList');
+
+    // Build clubs set
+    const clubs = Array.from(new Set(entrants.map(e => e.club))).sort();
+    const unaffiliatedCount = entrants.filter(e => e.club.toLowerCase().includes('unaffiliated')).length;
+
+    // Populate club filter
+    function populateClubFilter() {
+      clubs.forEach(c => {
+        const opt = document.createElement('option');
+        opt.value = c;
+        opt.textContent = c;
+        clubFilter.appendChild(opt);
+      });
+    }
+
+    // Render entrants
+    function renderEntrants() {
+      const q = (searchInput.value || '').toLowerCase().trim();
+      const cf = clubFilter.value;
+
+      const filtered = entrants.filter(e => {
+        const text = `${e.name} ${e.club}`.toLowerCase();
+        const matchesText = !q || text.includes(q);
+        const matchesClub = cf === 'all' || e.club === cf;
+        return matchesText && matchesClub;
+      });
+
+      tbody.innerHTML = filtered.map(e => `
+        <tr>
+          <td>${e.name}</td>
+          <td>${e.club}</td>
+        </tr>
+      `).join('') || `<tr><td colspan="2">No entrants match your filters.</td></tr>`;
+    }
+
+    // Stats
+    function renderStats() {
+      statTotal.textContent = entrants.length;
+      statClubs.textContent = clubs.length;
+      statUnaffiliated.textContent = unaffiliatedCount;
+    }
+
+    // Sidebar club list with counts
+    function renderClubList() {
+      const counts = entrants.reduce((acc, e) => {
+        acc[e.club] = (acc[e.club] || 0) + 1;
+        return acc;
+      }, {});
+      const ordered = Object.entries(counts).sort((a,b) => b[1]-a[1] || a[0].localeCompare(b[0]));
+      clubListEl.innerHTML = ordered.map(([club, count]) => `
+        <li>
+          <a href="#" data-club="${club}" class="club-link">${club}</a>
+          <span>${count}</span>
+        </li>
+      `).join('');
+      clubListEl.querySelectorAll('.club-link').forEach(a => {
+        a.addEventListener('click', (e) => {
+          e.preventDefault();
+          clubFilter.value = a.dataset.club;
+          renderEntrants();
+          window.scrollTo({ top: document.querySelector('table').offsetTop - 80, behavior: 'smooth' });
+        });
+      });
+    }
+
+    // Share buttons
+    function initShare() {
+      document.querySelectorAll('.share').forEach(container => {
+        const url = encodeURIComponent(container.dataset.shareUrl || window.location.href);
+        const text = encodeURIComponent(container.dataset.shareText || document.title);
+        const x = container.querySelector('.share-x');
+        const fb = container.querySelector('.share-fb');
+        const cp = container.querySelector('.share-copy');
+        if (x) x.href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+        if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+        [x, fb].forEach(a => a && a.setAttribute('target','_blank'));
+        [x, fb].forEach(a => a && a.setAttribute('rel','noopener'));
+        if (cp) cp.addEventListener('click', (e) => {
+          e.preventDefault();
+          navigator.clipboard.writeText(container.dataset.shareUrl || window.location.href).then(() => {
+            cp.textContent = 'Link copied!';
+            setTimeout(() => cp.textContent = 'Copy link', 1600);
+          });
+        });
+      });
+    }
+
+    // Export CSV
+    function exportCSV() {
+      const header = ['Name','Club'];
+      const rows = entrants.map(e => [e.name, e.club]);
+      const csv = [header, ...rows].map(r => r.map(x => `"${String(x).replace(/"/g,'""')}"`).join(',')).join('\n');
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url; a.download = 'marathon-entrants.csv';
+      document.body.appendChild(a); a.click(); a.remove();
+      URL.revokeObjectURL(url);
+    }
+
+    // Print
+    function printList() { window.print(); }
+
+    // Events
+    document.getElementById('clearFilters').addEventListener('click', () => {
+      searchInput.value = ''; clubFilter.value = 'all'; renderEntrants();
+    });
+    searchInput.addEventListener('input', renderEntrants);
+    globalSearch.addEventListener('input', () => {
+      searchInput.value = globalSearch.value;
+      renderEntrants();
+    });
+    clubFilter.addEventListener('change', renderEntrants);
+    exportCSVBtn.addEventListener('click', exportCSV);
+    printBtn.addEventListener('click', printList);
+
+    // Init
+    populateClubFilter();
+    renderEntrants();
+    renderStats();
+    renderClubList();
+    initShare();
+  </script>
+</body>
+</html>

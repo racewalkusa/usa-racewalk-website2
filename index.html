@@ -1,0 +1,923 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>USA RACEWALK</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Fjalla+One&family=Roboto+Condensed:wght@200;700&display=swap" rel="stylesheet">
+
+  <!-- SEO: Open Graph + Twitter -->
+  <meta property="og:title" content="USA RACEWALK — News, Results, Athletes, and Upcoming Races">
+  <meta property="og:description" content="Your go-to spot for United States racewalking information: featured stories, results, athlete profiles, upcoming races, and more.">
+  <meta property="og:image" content="https://usaracewalk.com/images/og-cover.jpg">
+  <meta property="og:url" content="https://usaracewalk.com/">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="USA RACEWALK">
+  <meta name="twitter:description" content="U.S. racewalking news, results, athletes, and upcoming races.">
+  <meta name="twitter:image" content="https://usaracewalk.com/images/og-cover.jpg">
+
+  <!-- JSON-LD: Featured Article -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "USATF Marathon Racewalk Favorites",
+    "description": "A deep dive into the leading contenders, training blocks, and race strategies for the USATF Marathon Racewalk.",
+    "image": ["https://usaracewalk.com/images/feature-marathon-favorites.jpg"],
+    "datePublished": "2026-01-02",
+    "dateModified": "2026-01-02",
+    "author": { "@type": "Person", "name": "USA RACEWALK Editorial" },
+    "publisher": {
+      "@type": "Organization",
+      "name": "USA RACEWALK",
+      "logo": { "@type": "ImageObject", "url": "https://usaracewalk.com/images/logo.png" }
+    },
+    "mainEntityOfPage": "https://usaracewalk.com/marathonfaves.html"
+  }
+  </script>
+
+  <style>
+    /* GENERAL STYLES */
+    :root { --nav:#003366; --accent:#ff0000; --bg:#e6f0ff; --text:#000; --card:#fff; }
+    body {
+      margin: 0;
+      font-family: 'Roboto Condensed', sans-serif;
+      font-weight: 200;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    /* NAVIGATION BAR */
+    nav {
+      position: sticky;
+      top: 0;
+      background: var(--nav);
+      padding: 16px;
+      text-align: center;
+      z-index: 100;
+      display: flex;
+      gap: 16px;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      margin: 0 8px;
+      color: #ffffff;
+      font-weight: bold;
+      text-decoration: none;
+      font-size: 0.95rem;
+      transition: color 0.3s ease;
+      cursor: pointer;
+    }
+
+    nav a:hover { color: var(--accent); }
+
+    /* SEARCH BAR */
+    #site-search {
+      flex: 1 1 320px;
+      max-width: 420px;
+      min-width: 220px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255,255,255,0.6);
+      outline: none;
+    }
+
+    /* HEADER */
+    header {
+      padding: 48px 24px 24px;
+      text-align: center;
+    }
+
+    header h1 {
+      font-family: 'Fjalla One', sans-serif;
+      font-weight: 400;
+      font-size: 3.6rem;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      color: var(--nav);
+    }
+
+    header p {
+      font-size: 1.15rem;
+      max-width: 700px;
+      margin: 0 auto 8px;
+      color: #000000;
+    }
+
+    /* TABS / SECTIONS */
+    .tab-content { display: none; }
+    #featured { display: block; } /* default landing */
+
+    section {
+      max-width: 1000px;
+      margin: 0 auto 32px;
+      padding: 32px 24px;
+      background: var(--card);
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    section:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+
+    h2 {
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 16px;
+      color: var(--nav);
+    }
+
+    h3 {
+      font-weight: 700;
+      font-size: 1.25rem;
+      color: var(--nav);
+      margin-top: 28px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--nav);
+      padding-bottom: 4px;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 40px 24px;
+      font-size: 0.9rem;
+      color: #444;
+    }
+
+    /* NEWS */
+    .news-empty {
+      background: #f7faff;
+      border: 1px dashed #cfd9f1;
+      color: #324a78;
+      padding: 18px;
+      border-radius: 10px;
+    }
+
+    /* SHARE */
+    .share {
+      margin-top: 8px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .share a {
+      color: var(--nav);
+      font-weight: 700;
+      text-decoration: none;
+    }
+    .share a:hover { color: var(--accent); }
+
+    /* ATHLETE CARDS */
+    .athlete-card {
+      background: #ffffff;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+      padding: 18px;
+      display: flex;
+      align-items: flex-start;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .athlete-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+
+    .athlete-card img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      margin-right: 16px;
+      object-fit: cover;
+    }
+
+    .athlete-info strong {
+      font-size: 1.4rem;
+      color: var(--nav);
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .athlete-bio {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      transition: all 0.4s ease;
+    }
+
+    .athlete-card:hover .athlete-bio {
+      max-height: 500px;
+      opacity: 1;
+      margin-top: 6px;
+    }
+
+    /* RESULTS */
+    .results-tabs { margin-bottom: 16px; }
+
+    .results-tab-btn {
+      background: var(--nav);
+      color: #fff;
+      border: none;
+      padding: 10px 16px;
+      margin-right: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      border-radius: 6px;
+    }
+
+    .results-tab-btn.active { background: var(--accent); }
+
+    .results-event {
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .results-header {
+      background: var(--nav);
+      color: white;
+      padding: 12px 16px;
+      cursor: pointer;
+      font-weight: 700;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .results-header:hover { background: #0055aa; }
+
+    .results-content {
+      max-height: 0;
+      overflow: hidden;
+      background: #ffffff;
+      padding: 0 16px;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+    }
+
+    .results-event.open .results-content {
+      max-height: 2000px;
+      padding: 14px 16px 16px;
+    }
+
+    .results-arrow {
+      font-size: 1.1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .results-event.open .results-arrow { transform: rotate(180deg); }
+
+    /* FEATURED HERO (single, full-width) */
+    #featured .hero {
+      display: block;
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      cursor: pointer;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    #featured .hero:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 28px rgba(0,0,0,0.15);
+    }
+    #featured .hero img {
+      width: 100%;
+      height: 320px;
+      object-fit: cover;
+    }
+    #featured .hero-content {
+      padding: 18px 20px;
+    }
+    #featured .hero h3 {
+      font-size: 2rem;
+      margin: 0 0 8px;
+      color: var(--nav);
+      border: none;
+      padding: 0;
+    }
+    #featured .hero p {
+      font-size: 1.05rem;
+      color: #333;
+      margin: 0 0 12px;
+    }
+    #featured .hero .readmore {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+   /* UPCOMING RACES (dynamic by year & month) */
+    .calendar-controls { display: flex; gap: 8px; margin-bottom: 12px; flex-wrap: wrap; }
+    .calendar-controls select, .calendar-controls input {
+      padding: 8px 10px; border: 1px solid #ddd; border-radius: 8px;
+    }
+    .calendar-month {
+      margin-top: 16px;
+      padding-top: 8px;
+      border-top: 1px solid #eee;
+    }
+    .calendar-month h3 {
+      border: none;
+      padding: 0;
+      margin-bottom: 8px;
+    }
+    .calendar-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .calendar-item {
+      padding: 10px 0;
+      border-bottom: 1px solid #f0f3f8;
+    }
+    .calendar-item:last-child { border-bottom: none; }
+    .calendar-item .title { font-weight: 700; color: var(--nav); }
+    .calendar-item .meta { font-size: 0.92rem; color: #555; }
+
+    /* SUBMISSIONS */
+    .submissions-form label { display: block; font-weight: 700; color: var(--nav); margin-top: 12px; }
+    .submissions-form input, .submissions-form select, .submissions-form textarea {
+      width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 8px; margin-top: 6px;
+    }
+    .submissions-form button {
+      margin-top: 16px; padding: 10px 16px; background: var(--nav); color: #fff; border: none; border-radius: 8px; cursor: pointer; font-weight: 700;
+    }
+    .submissions-form button:hover { background: #0055aa; }
+
+    /* ACCESSIBILITY: focus styles */
+    a:focus, button:focus, input:focus, select:focus, textarea:focus, .hero:focus {
+      outline: 2px solid var(--accent); outline-offset: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+<nav aria-label="Primary">
+  <a onclick="showSection('featured')" aria-label="Featured">Featured</a>
+  <a onclick="showSection('news')" aria-label="News">News</a>
+  <a onclick="showSection('athletes')" aria-label="Athletes">Athletes</a>
+  <a onclick="showSection('results')" aria-label="Results">Results</a>
+  <a onclick="showSection('upcoming')" aria-label="Upcoming Races">Upcoming Races</a>
+  <a onclick="showSection('submissions')" aria-label="Submissions">Submissions</a>
+  <a onclick="showSection('about')" aria-label="About">About</a>
+  <input id="site-search" type="search" placeholder="Search articles, athletes, results…" aria-label="Site search">
+</nav>
+
+<header>
+  <h1>USA RACEWALK</h1>
+  <p>Your go-to spot for United States racewalking information.</p>
+</header>
+
+<!-- FEATURED HERO (single, full-width) -->
+<section id="featured" class="tab-content">
+  <h2>Featured</h2>
+  <div class="hero searchable" data-url="marathonfaves.html" role="link" tabindex="0">
+    <img src="images/feature-marathon-favorites.jpg" alt="USATF Marathon Racewalk Favorites" loading="lazy">
+    <div class="hero-content">
+      <h3>USATF Marathon Racewalk Favorites</h3>
+      <p>A deep dive into the leading contenders, their training blocks, race strategies, and what splits could look like over 42.2km. We break down strengths, recent form, and how course specifics may shape the outcome.</p>
+      <span class="readmore">Read more →</span>
+      <div class="share" data-share-url="https://usaracewalk.com/marathonfaves.html" data-share-text="USATF Marathon Racewalk Favorites">
+        <a href="#" class="share-x">Share on X</a>
+        <a href="#" class="share-fb">Share on Facebook</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- NEWS -->
+<section id="news" class="tab-content">
+  <h2>Latest</h2>
+  <div class="news-empty">
+    No news yet — we’re racewalking to the good stuff. Check back soon!
+  </div>
+
+  <!-- Compact list calendar on News -->
+  <div class="news-calendar">
+    <h3>Coming Up Next</h3>
+    <ul id="newsUpcomingList">
+      <!-- Rendered by JS: next events (compact) -->
+    </ul>
+  </div>
+</section>
+
+<!-- ATHLETES -->
+<section id="athletes" class="tab-content">
+  <h2>Athletes</h2>
+
+  <!-- US OLYMPIANS -->
+  <h3>US Olympians</h3>
+  <a href="maria.html" class="athlete-card searchable">
+    <img src="images/maria.jpeg" alt="Maria Michta-Coffey">
+    <div class="athlete-info"><strong>Maria Michta-Coffey</strong>
+      <p class="athlete-bio">2012 & 2016 Olympian</p>
+    </div>
+  </a>
+  <a href="miranda.html" class="athlete-card searchable">
+    <img src="images/miranda.jpeg" alt="Miranda Melville">
+    <div class="athlete-info"><strong>Miranda Melville</strong>
+      <p class="athlete-bio">2016 Olympian</p>
+    </div>
+  </a>
+  <a href="nick.html" class="athlete-card searchable">
+    <img src="images/nick.jpeg" alt="Nick Christie">
+    <div class="athlete-info"><strong>Nick Christie</strong>
+      <p class="athlete-bio">2020 Olympian</p>
+    </div>
+  </a>
+
+  <!-- ELITE ATHLETES -->
+  <h3>Elite Athletes</h3>
+  <a href="emmanuel.html" class="athlete-card searchable">
+    <img src="images/emmanuel.jpg" alt="Emmanuel Corvera">
+    <div class="athlete-info"><strong>Emmanuel Corvera</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="jordan.html" class="athlete-card searchable">
+    <img src="images/jordan.jpeg" alt="Jordan Crawford">
+    <div class="athlete-info"><strong>Jordan Crawford</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="jason.html" class="athlete-card searchable">
+    <img src="images/jason.jpeg" alt="Jason Cherng">
+    <div class="athlete-info"><strong>Jason Cherng</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="lauren.html" class="athlete-card searchable">
+    <img src="images/lauren.jpeg" alt="Lauren Harris">
+    <div class="athlete-info"><strong>Lauren Harris</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="katieb.html" class="athlete-card searchable">
+    <img src="images/katieb.jpeg" alt="Katie Burnett">
+    <div class="athlete-info"><strong>Katie Burnett</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="angelica.html" class="athlete-card searchable">
+    <img src="images/angelica.jpeg" alt="Angelica Harris">
+    <div class="athlete-info"><strong>Angelica Harris</strong>
+      <p class="athlete-bio">Elite Athlete</p>
+    </div>
+  </a>
+  <a href="stephanie.html" class="athlete-card searchable">
+    <img src="images/stephanie.jpeg" alt="Stephanie Casey">
+    <div class="athlete-info"><strong>Stephanie Casey</strong>
+      <p class="athlete-bio">US National Team Member</p>
+    </div>
+  </a>
+  <a href="katiem.html" class="athlete-card searchable">
+    <img src="images/katiem.jpeg" alt="Katie Miale">
+    <div class="athlete-info"><strong>Katie Miale</strong>
+      <p class="athlete-bio">Elite Athlete</p>
+    </div>
+  </a>
+
+  <!-- U20 ATHLETES -->
+  <h3>U20 Athletes</h3>
+  <a href="gael.html" class="athlete-card searchable">
+    <img src="images/gael.jpeg" alt="Gael Plascenia">
+    <div class="athlete-info"><strong>Gael Plascenia</strong>
+      <p class="athlete-bio">Top U20 Racewalker</p>
+    </div>
+  </a>
+
+  <!-- HIGH SCHOOL ATHLETES -->
+  <h3>High School Athletes</h3>
+  <!-- Future athletes go here -->
+
+</section>
+
+<!-- RESULTS -->
+<section id="results" class="tab-content">
+  <h2>Results</h2>
+  <div class="results-tabs">
+    <button class="results-tab-btn active" onclick="showResults('year2026', this)">2026</button>
+    <button class="results-tab-btn" onclick="showResults('year2025', this)">2025</button>
+  </div>
+
+  <!-- 2026 -->
+  <div id="year2026" style="display:block;">
+    <div class="results-event">
+      <div class="results-header" onclick="toggleResults(this)">
+        2026 Season — Coming Soon
+        <span class="results-arrow">▼</span>
+      </div>
+      <div class="results-content">
+        <p>We’ll post meet-by-meet results here as the season begins.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2025 -->
+  <div id="year2025" style="display:none;">
+
+  <!-- MILLROSE GAMES – WOMEN -->
+  <div class="results-event">
+    <div class="results-header" onclick="toggleResults(this)">
+      Millrose Games – Women’s Mile Race Walk
+      <span class="results-arrow">▼</span>
+    </div>
+    <div class="results-content">
+      <p><strong>1.</strong> Lauren Harris – 6:46.37</p>
+      <p><strong>2.</strong> Angelina Colon – 7:10.86</p>
+      <p><strong>3.</strong> Alexa Governor – 7:15.06</p>
+      <p><strong>4.</strong> Ruby Ray – 7:28.02</p>
+      <p><strong>5.</strong> Katie Miale – 7:30.65</p>
+    </div>
+  </div>
+
+  <!-- MILLROSE GAMES – MEN -->
+  <div class="results-event">
+    <div class="results-header" onclick="toggleResults(this)">
+      Millrose Games – Men’s Mile Race Walk
+      <span class="results-arrow">▼</span>
+    </div>
+    <div class="results-content">
+      <p><strong>1.</strong> Ever Palma – 5:24.50 (WR)</p>
+      <p><strong>2.</strong> Perseus Karlström – 5:32.34</p>
+      <p><strong>3.</strong> Chris Linke – 5:35.83</p>
+      <p><strong>7.</strong> Jordan Crawford – 6:15.13</p>
+      <p><strong>8.</strong> Jason Cherng – 6:15.34</p>
+      <p><strong>9.</strong> Gael Plascenia – 6:29.81</p>
+    </div>
+  </div>
+
+  <!-- USATF INDOOR – WOMEN -->
+  <div class="results-event">
+    <div class="results-header" onclick="toggleResults(this)">
+      USATF Indoor Nationals – Women’s 3000m
+      <span class="results-arrow">▼</span>
+    </div>
+    <div class="results-content">
+      <p><strong>1.</strong> Lauren Harris – 13:23.83</p>
+      <p><strong>2.</strong> Maria Michta-Coffey – 13:33.28</p>
+      <p><strong>3.</strong> Miranda Melville – 13:36.67</p>
+      <p><strong>4.</strong> Katie Burnett – 13:47.89</p>
+      <p><strong>5.</strong> Ruby Ray – 14:00.76</p>
+      <p><strong>6.</strong> Celina Lepe-Corvera – 14:17.38</p>
+      <p><strong>7.</strong> Izabelle Trefts – 14:24.70</p>
+      <p><strong>8.</strong> Stephanie Casey – 14:38.25</p>
+      <p><strong>9.</strong> Angelina Colon – 14:40.34</p>
+      <p><strong>10.</strong> Angelica Harris – 14:49.51</p>
+      <p><strong>11.</strong> Katie Miale – 14:50.30</p>
+    </div>
+  </div>
+
+  <!-- USATF INDOOR – MEN -->
+  <div class="results-event">
+    <div class="results-header" onclick="toggleResults(this)">
+      USATF Indoor Nationals – Men’s 3000m
+      <span class="results-arrow">▼</span>
+    </div>
+    <div class="results-content">
+      <p><strong>1.</strong> Emmanuel Corvera – 11:57.89</p>
+      <p><strong>2.</strong> Jordan Crawford – 12:00.92</p>
+      <p><strong>3.</strong> Jason Cherng – 12:19.50</p>
+      <p><strong>4.</strong> Bricyn Healey – 12:36.61</p>
+      <p><strong>5.</strong> Ryan Allen – 12:58.37</p>
+      <p><strong>6.</strong> Clayton Stoil – 13:16.81</p>
+      <p><strong>7.</strong> AJ Gruttadauro – 15:39.09</p>
+    </div>
+  </div>
+
+  <!-- NIKE OUTDOOR / USATF U20 -->
+  <div class="results-event">
+    <div class="results-header" onclick="toggleResults(this)">
+      Nike Outdoor Nationals / USATF U20 – 10,000m
+      <span class="results-arrow">▼</span>
+    </div>
+    <div class="results-content">
+      <p><strong>Men</strong></p>
+      <p><strong>1.</strong> Jonny Jurchen – 48:43.04</p>
+      <p><strong>2.</strong> Rowan McDonald – 49:59.42</p>
+      <p><strong>3.</strong> David Dorantes – 50:14.78</p>
+      <p><strong>4.</strong> Matthew Wombacker – 54:41.65</p>
+      <p><strong>5.</strong> Ansh Patel – 56:53.82</p>
+
+      <p><strong>Women</strong></p>
+      <p><strong>1.</strong> Talia Green – 52:25.62</p>
+      <p><strong>2.</strong> Kayleia Lindsey – 57:07.92</p>
+      <p><strong>3.</strong> Natalie Grant – 58:04.65</p>
+    </div>
+  </div>
+
+</div>
+
+
+<!-- UPCOMING RACES (Dynamic by Year & Month) -->
+<section id="upcoming" class="tab-content">
+  <h2>Upcoming Races</h2>
+  <p>Key racewalking and track championships (2026). Filter by year and month.</p>
+
+  <div class="calendar-controls">
+    <select id="calendarYear" aria-label="Filter by year"></select>
+    <select id="calendarMonth" aria-label="Filter by month"></select>
+    <input id="calendarSearch" type="search" placeholder="Search races…" aria-label="Search upcoming races">
+  </div>
+
+  <div id="calendarContainer">
+    <!-- Rendered by JS -->
+  </div>
+</section>
+
+<!-- SUBMISSIONS PAGE -->
+<section id="submissions" class="tab-content">
+  <h2>Submissions</h2>
+  <p>Meet directors and athletes: submit meet info, results, or story ideas. We’ll review and publish or follow up.</p>
+  <form class="submissions-form" id="submissionsForm" action="https://formspree.io/f/your-id" method="POST">
+    <label for="subType">Submission Type</label>
+    <select name="type" id="subType" required>
+      <option value="">Choose one</option>
+      <option value="meet">Meet Listing / Update</option>
+      <option value="results">Results</option>
+      <option value="athlete">Athlete Bio / Update</option>
+      <option value="story">Story Pitch</option>
+    </select>
+
+    <label for="subName">Your Name</label>
+    <input type="text" id="subName" name="name" placeholder="Full name" required>
+
+    <label for="subEmail">Your Email</label>
+    <input type="email" id="subEmail" name="email" placeholder="email@example.com" required>
+
+    <label for="subTitle">Title / Event Name</label>
+    <input type="text" id="subTitle" name="title" placeholder="e.g., USATF Indoor Nationals" required>
+
+    <label for="subDate">Date (if applicable)</label>
+    <input type="date" id="subDate" name="date">
+
+    <label for="subLocation">Location (if applicable)</label>
+    <input type="text" id="subLocation" name="location" placeholder="City, State">
+
+    <label for="subDetails">Details</label>
+    <textarea id="subDetails" name="details" rows="6" placeholder="Include links to registration/results, athlete info, or pitch summary." required></textarea>
+
+    <button type="submit">Submit</button>
+    <p style="font-size:0.9rem;color:#555;">By submitting, you agree we may edit for clarity and publish on USA RACEWALK.</p>
+  </form>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="tab-content">
+  <h2>About</h2>
+  <p>USA RACEWALK is your go-to source for U.S. racewalking: news, results, athlete profiles, training features, and a dynamic list of upcoming races. Our goal is to promote US racewalking and to offer up-to-date information.</p>
+</section>
+
+<footer>© 2026 USA RACEWALK</footer>
+
+<script>
+  // Tab navigation
+  function showSection(sectionId) {
+    document.querySelectorAll('.tab-content').forEach(sec => sec.style.display = 'none');
+    document.getElementById(sectionId).style.display = 'block';
+    window.scrollTo(0,0);
+  }
+
+  // Results year tabs
+  function showResults(yearId, btn) {
+    document.querySelectorAll('[id^="year"]').forEach(y => y.style.display = 'none');
+    document.querySelectorAll('.results-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById(yearId).style.display = 'block';
+    btn.classList.add('active');
+  }
+
+  // Results accordion
+  function toggleResults(header) {
+    const event = header.parentElement;
+    event.classList.toggle('open');
+  }
+
+  // Social share buttons
+  function initShareButtons() {
+    document.querySelectorAll('.share').forEach(container => {
+      const url = encodeURIComponent(container.dataset.shareUrl || window.location.href);
+      const text = encodeURIComponent(container.dataset.shareText || 'USA RACEWALK');
+      const x = container.querySelector('.share-x');
+      const fb = container.querySelector('.share-fb');
+      if (x) x.href = `https://twitter.com/intent/tweet?url=${url}&text=${text}`;
+      if (fb) fb.href = `https://www.facebook.com/sharer/sharer.php?u=${url}`;
+      [x, fb].forEach(a => a && a.setAttribute('target','_blank'));
+      [x, fb].forEach(a => a && a.setAttribute('rel','noopener'));
+    });
+  }
+
+  // Featured hero open on click/keyboard (opens marathonfaves.html)
+  function initFeaturedHero() {
+    const hero = document.querySelector('#featured .hero');
+    if (!hero) return;
+    const url = hero.dataset.url;
+    hero.addEventListener('click', e => {
+      const t = e.target;
+      if (t.tagName.toLowerCase() === 'a') return; // allow inner share links
+      window.open(url, '_blank', 'noopener');
+    });
+    hero.addEventListener('keydown', e => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        window.open(url, '_blank', 'noopener');
+      }
+    });
+  }
+
+  // Site search (client-side)
+  const searchableEls = () => [
+    ...document.querySelectorAll('.searchable, .results-event, #featured .hero, .calendar-item')
+  ];
+  document.getElementById('site-search').addEventListener('input', e => {
+    const q = e.target.value.trim().toLowerCase();
+    const elements = searchableEls();
+    if (!q) {
+      elements.forEach(el => el.style.display = '');
+      return;
+    }
+    elements.forEach(el => {
+      const text = el.textContent.toLowerCase();
+      el.style.display = text.includes(q) ? '' : 'none';
+    });
+  });
+
+ // Upcoming Races data grouped by year (2026 provided list)
+  const upcomingData = {
+    '2026': [
+      // January
+      { date: '2026-01-11', item: 'USATF Marathon Race Walk Championship', city: 'Santee, CA', link: '', notes: '' },
+
+      // February
+      { date: '2026-02-01', item: 'Millrose Games – USATF 1 Mile Championship', city: 'New York, NY', link: '', notes: '' },
+      { date: '2026-02-19', item: 'USATF Masters Indoor Championships (Feb 19–22)', city: 'Albuquerque, NM', link: '', notes: 'Multi-day' },
+      { date: '2026-02-28', item: 'USATF Indoor Championships (Feb 28 – Mar 1)', city: 'Staten Island, NY', link: '', notes: 'Multi-day' },
+
+      // March
+      { date: '2026-03-05', item: 'NAIA Indoor Championships (Mar 5–7)', city: 'Gainesville, FL', link: '', notes: 'Multi-day' },
+      { date: '2026-03-08', item: 'USATF Half Marathon Race Walk Championship', city: 'Location TBA', link: '', notes: '' },
+      { date: '2026-03-20', item: 'USATF Youth Indoor Championships (Mar 20–22)', city: 'Staten Island, NY', link: '', notes: 'Multi-day' },
+
+      // April
+      { date: '2026-04-12', item: 'WA Race Walk Team Championships', city: 'Location TBA', link: '', notes: 'Includes Marathon & 10 km' },
+      { date: '2026-04-25', item: 'Penn Relays', city: 'Philadelphia, PA', link: '', notes: '' },
+
+      // May
+      { date: '2026-05-03', item: 'Jack Mortland Ohio 20,000 m Race Walk Championship', city: 'Xenia, OH', link: '', notes: '' },
+      { date: '2026-05-08', item: 'Podebrady Gold Meeting', city: 'Location TBA', link: '', notes: 'Half Marathon & U20 10 km — World-level' },
+      { date: '2026-05-20', item: 'NAIA Outdoor Championships (May 20–22)', city: 'Asheville, NC', link: '', notes: 'Multi-day' },
+
+      // June
+      { date: '2026-06-05', item: 'NACAC U18 & U23 Championships (Jun 5–7)', city: 'Location TBA', link: '', notes: 'Multi-day' },
+      { date: '2026-06-18', item: 'USATF U20 Championships (Jun 18–21)', city: 'Eugene, OR', link: '', notes: 'Multi-day' },
+      { date: '2026-06-26', item: 'Pan American Senior Championships (Jun 26–28)', city: 'Location TBA', link: '', notes: 'Multi-day' },
+
+      // July
+      { date: '2026-07-16', item: 'USATF Masters Outdoor Championships (Jul 16–19)', city: 'Geneva, OH', link: '', notes: 'Multi-day' },
+      { date: '2026-07-23', item: 'USATF Outdoor Championships (Jul 23–26)', city: 'Location TBA', link: '', notes: 'Multi-day' },
+      { date: '2026-07-27', item: 'USATF Junior Olympic Championships (Jul 27 – Aug 2)', city: 'Cerritos, CA', link: '', notes: 'Multi-day' },
+
+      // August
+      { date: '2026-08-08', item: 'World U20 Championships (date tbc)', city: 'Eugene, OR', link: '', notes: 'TBC' },
+      { date: '2026-08-22', item: 'WMA Outdoor Championships (Aug 22 – Sep 3)', city: 'Daegu, South Korea', link: '', notes: 'Multi-day' }
+    ]
+  };
+
+  const monthNames = {
+    '01':'January','02':'February','03':'March','04':'April','05':'May','06':'June',
+    '07':'July','08':'August','09':'September','10':'October','11':'November','12':'December'
+  };
+
+  function initUpcomingControls() {
+    const yearSelect = document.getElementById('calendarYear');
+    const monthSelect = document.getElementById('calendarMonth');
+
+    yearSelect.innerHTML = Object.keys(upcomingData)
+      .sort()
+      .map(y => `<option value="${y}">${y}</option>`)
+      .join('');
+
+    const latestYear = Object.keys(upcomingData).sort().slice(-1)[0];
+    yearSelect.value = latestYear;
+
+    populateMonthOptions(latestYear);
+
+    yearSelect.addEventListener('change', () => {
+      populateMonthOptions(yearSelect.value);
+      renderUpcoming();
+    });
+    monthSelect.addEventListener('change', renderUpcoming);
+    document.getElementById('calendarSearch').addEventListener('input', renderUpcoming);
+  }
+
+  function populateMonthOptions(year) {
+    const monthSelect = document.getElementById('calendarMonth');
+    const events = upcomingData[year] || [];
+    const months = Array.from(new Set(events.map(ev => ev.date.split('-')[1]))).sort();
+    monthSelect.innerHTML = `<option value="all">All Months</option>` +
+      months.map(m => `<option value="${m}">${monthNames[m] || m}</option>`).join('');
+    monthSelect.value = 'all';
+  }
+
+  function renderUpcoming() {
+    const year = document.getElementById('calendarYear').value;
+    const month = document.getElementById('calendarMonth').value;
+    const q = document.getElementById('calendarSearch').value.trim().toLowerCase();
+    const container = document.getElementById('calendarContainer');
+
+    const events = (upcomingData[year] || []).filter(ev => {
+      const m = ev.date.split('-')[1];
+      const monthMatch = month === 'all' || m === month;
+      const text = `${ev.date} ${ev.item} ${ev.city} ${ev.notes}`.toLowerCase();
+      const qMatch = !q || text.includes(q);
+      return monthMatch && qMatch;
+    }).sort((a,b) => a.date.localeCompare(b.date));
+
+    const groups = {};
+    events.forEach(ev => {
+      const m = ev.date.split('-')[1];
+      groups[m] = groups[m] || [];
+      groups[m].push(ev);
+    });
+
+    container.innerHTML = '';
+    const monthsToRender = month === 'all' ? Object.keys(groups).sort() : [month];
+    if (monthsToRender.length === 0) {
+      container.innerHTML = `<p>No upcoming races found.</p>`;
+      return;
+    }
+
+    monthsToRender.forEach(m => {
+      const monthEvents = groups[m] || [];
+      if (monthEvents.length === 0 && month !== 'all') return;
+      const wrapper = document.createElement('div');
+      wrapper.className = 'calendar-month';
+      wrapper.innerHTML = `
+        <h3>${monthNames[m] || m} ${year}</h3>
+        <ul class="calendar-list">
+          ${monthEvents.map(ev => `
+            <li class="calendar-item searchable">
+              <div class="title">${ev.item}</div>
+              <div class="meta">${ev.date} · ${ev.city}${ev.notes ? ' · ' + ev.notes : ''} ${ev.link ? '· <a href="${ev.link}" target="_blank" rel="noopener">Details</a>' : ''}</div>
+            </li>
+          `).join('')}
+        </ul>
+      `;
+      container.appendChild(wrapper);
+    });
+  }
+
+
+  // Render compact list on News (next N events)
+  function renderNewsUpcoming(limit = 6) {
+    const listEl = document.getElementById('newsUpcomingList');
+    if (!listEl) return;
+
+    // Flatten all events across years, then pick upcoming relative to today
+    const allEvents = Object.entries(upcomingData)
+      .flatMap(([year, arr]) => arr.map(e => ({ ...e, year })));
+
+    const today = new Date().toISOString().slice(0,10);
+    const next = allEvents
+      .filter(e => e.date >= today)
+      .sort((a,b) => a.date.localeCompare(b.date))
+      .slice(0, limit);
+
+    if (next.length === 0) {
+      listEl.innerHTML = `<li>No upcoming races found.</li>`;
+      return;
+    }
+
+    listEl.innerHTML = next.map(ev => `
+      <li>${ev.date} — <strong>${ev.item}</strong> · ${ev.city}${ev.link ? ' · <a href="${ev.link}" target="_blank" rel="noopener">Details</a>' : ''}</li>
+    `).join('');
+  }
+
+  // Init on load
+  window.addEventListener('DOMContentLoaded', () => {
+    initShareButtons();
+    initFeaturedHero();
+    initUpcomingControls();
+    renderUpcoming();
+    renderNewsUpcoming();
+  });
+</script>
+
+</body>
+</html>
